@@ -42,6 +42,9 @@ public class Restaurant {
      */
     public int calculateOrderPrice(OrderR orderR){
         int sum = 0;
+        for (Meal meal:orderR.getMealList()){ //musimy sprawdzić ile kosztuje każde danie
+            sum=sum+meal.getPrice();
+        }
         //todo implement
         return sum;
     }
@@ -53,6 +56,12 @@ public class Restaurant {
      */
     public Meal getMeal(String mealName){
         //todo implement
+        //return menu.stream().filter(x -> mealName.equals(x.getName())).findAny().orElse(null);
+        for (Meal meal: menu){
+            if (meal.getName().equals(mealName)){
+                return meal;
+            }
+        }
         return null;
     }
 

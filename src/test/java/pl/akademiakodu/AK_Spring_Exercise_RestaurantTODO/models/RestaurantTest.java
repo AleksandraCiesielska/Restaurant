@@ -33,10 +33,10 @@ public class RestaurantTest {
      * @throws Exception in case of user input error
      */
     @Test public void restaurantTests() throws Exception {
-        assertNotNull(restaurant.getMenu());
-        assertTrue(restaurant.checkIfMealExist("Pizza"));
-        assertFalse(restaurant.checkIfMealExist("Pierogi"));
-        assertEquals(restaurant.getMeal("Kluski").toString(), new Meal("Kluski", 9).toString());
+        assertNotNull(restaurant.getMenu()); //metoda sprawdza czy to co tutaj przyjęło nie zwroci nulla, jeśli zwroci test nie przechodzi
+        assertTrue(restaurant.checkIfMealExist("Pizza")); // czy to co w środku zwroci true, jeśli tak będzie przechodził
+        assertFalse(restaurant.checkIfMealExist("Pierogi")); // to samo tylko z falsem
+        assertEquals(restaurant.getMeal("Kluski").toString(), new Meal("Kluski", 9).toString()); // sprawdza eguals
         OrderR orderTest = new OrderR();
         orderTest.setOrderOwner("User");
         List<Meal> mealList = new ArrayList<>();
