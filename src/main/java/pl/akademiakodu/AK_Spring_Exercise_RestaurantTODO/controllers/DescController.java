@@ -17,7 +17,7 @@ public class DescController {
      * @return desc template
      */
     @GetMapping("/desc") public String descGet(){
-        return "desc";
+        return "redirect:/order";
     }
 
 }
